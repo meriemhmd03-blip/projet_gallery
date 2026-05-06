@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="row">
+
+
+			<div class="col-md-6">
+				<img src="{{ vich_uploader_asset(photo, 'imageFile') }}" class="img-fluid rounded-4" alt="{{ photo.title }}">
+			</div>
+
+			<div class="col-md-6 ps-4">
+				<h1>{{ photo.title }}</h1>
+
+				<span class="badge" style="background-color: {{ photo.category.color }}; color: white;">
+					{{ photo.category.name }}
+				</span>
+
+				<p class="mt-4">{{ photo.description }}</p>
+
+				<a href="{{ path('app_home') }}" class="btn mt-3" style="border: 1px solid grey ; color: black; background-color : grey">
+					Retour à la galerie
+				</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

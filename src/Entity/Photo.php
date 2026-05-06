@@ -23,7 +23,6 @@ class Photo
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    // ← Pas stocké en BDD, juste pour l'upload
     #[Vich\UploadableField(mapping: 'photos', fileNameProperty: 'imageName')]
     private ?File $imageFile = null;
 
@@ -64,7 +63,6 @@ class Photo
         return $this;
     }
 
-    // ← Getter/Setter pour imageFile
     public function getImageFile(): ?File
     {
         return $this->imageFile;
